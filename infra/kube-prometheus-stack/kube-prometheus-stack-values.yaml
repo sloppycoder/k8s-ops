@@ -76,7 +76,7 @@ prometheus:
     storageSpec:
       volumeClaimTemplate:
         spec:
-          storageClassName: mangaged-nfs-storage
+          storageClassName: managed-nfs-storage
           accessModes: ["ReadWriteOnce"]
           resources:
             requests:
