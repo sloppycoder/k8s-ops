@@ -41,12 +41,14 @@ vagrant ssh s2
 
 
 ```
+# generate a SSH key and add as Deploy key if neccessary
 
 ### Bootstrap Flux and Sync
 flux bootstrap git \
   --url=<this_repo> \
   --branch=test \
-  --path=clusters/test
+  --path=clusters/test \
+  --private-key-file=$HOME/.ssh/id_rsa
 
 ```
 
