@@ -1,0 +1,11 @@
+export K3S_VERSION="v1.21.3+k3s1"
+export K3S_TOKEN=$(cat token.txt)
+curl -sfL https://get.k3s.io | sh -s - server --cluster-init 
+
+mkdir $HOME/.kube
+sudo cat /etc/rancher/k3s/k3s.yaml > $HOME/.kube/config
+
+echo "export KUBECONFIG=$HOME/.kube/config" >> $HOME/.profile
+
+IP=$(hostname -i | awk '{ print $1 }')
+echo use $IP in server or agent setup scripts
