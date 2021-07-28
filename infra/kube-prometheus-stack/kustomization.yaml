@@ -4,6 +4,7 @@ namespace: monitoring
 resources:
   - namespace.yaml
   - release.yaml
+  - ingressroute.yaml
 configMapGenerator:
   - name: kube-prometheus-stack-values
     files:
